@@ -2,6 +2,16 @@
 
 Thank you for your interest in contributing to this project.
 
+## Issues
+
+Please be as descriptive as possible about issues encountered.
+
+## Feature requests
+
+Feel free to submit ideas. Be aware that some items may be out of the intended scope for the vision of this particular project and will be closed or kept on the back burner.
+
+## Code collaboration
+
 This project welcomes improvements and new features. Open and unassigned issues listed on the issue tracker may be claimed. Other changes are welcome for consideration, the open issues simply reflect the maintainer's vision.
 
 The repository is intended to be relatively easy to read and maintain while using clean design, so please be ready to discuss and be open to feedback.
