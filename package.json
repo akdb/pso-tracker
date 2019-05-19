@@ -1,0 +1,32 @@
+{
+  "name": "pso-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "browser": "index.html",
+  "scripts": {
+    "archive": "bestzip source.zip *.json *.md .eslintrc.js .htmlnanorc .babelrc src",
+    "build": "npm run archive && parcel build --no-cache --no-minify --public-url ./ src/*.html",
+    "dev": "npm run archive && cross-env ESLINT_OPTION=warn parcel src/*.html",
+    "release": "npm run build && bestzip pso-tracker.zip README.dist.md LICENSE.txt dist",
+    "lint": "cross-env eslint src",
+    "lint-fix": "crossenv eslint --fix src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "AGPL-3.0-only",
+  "dependencies": {
+    "@svgdotjs/svg.filter.js": "^3.0.6",
+    "@svgdotjs/svg.js": "^3.0.12",
+    "honeycomb-grid": "^1.4.3",
+    "parcel-bundler": "^1.12.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "cross-env": "^5.2.0",
+    "bestzip": "^2.1.2",
+    "eslint": "^5.16.0",
+    "eslint-plugin-jsdoc": "^4.8.3",
+    "parcel-plugin-eslint": "^1.0.7"
+  }
+}

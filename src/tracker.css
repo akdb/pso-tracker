@@ -1,0 +1,184 @@
+/* Position the tracker beneath the high-level controls but size it to leave room for the footer */
+body > svg
+{
+    width: 100%;
+    font-size: 12pt;
+    height: calc(100% - 2.5em - 6px);
+    position: fixed;
+    top: calc(1.5em + 5px);
+}
+
+/* Position and size the high-level controls */
+nav
+{
+    font-size: 12pt;
+    position: fixed;
+    width: 100%;
+    height: calc(1.5em + 1px);
+    border-bottom: solid 1px white;
+}
+
+/* Position the footer at the bottom of the screen */
+footer
+{
+    font-size: 12pt;
+    width: 100%;
+    border-top: solid 1px white;
+    position: fixed;
+    top: calc(100% - 1em - 2px);
+}
+
+/* Avoid overlapping elements interfering with hover events */
+svg *
+{
+    pointer-events: none;
+}
+
+/* By default, draw polygons only for their edges (since layered polygons are used and only one may have a fill) */
+polygon
+{
+    fill: none;
+}
+
+/* Cover the gaps between each cell and between cells and the outer edge */
+polygon.container
+{
+    stroke-width: 4;
+    stroke: black;
+}
+
+/*
+ * Use the window-blinds
+ * Apply 'color' property for the stroke color (can be set on 'use' instances)
+ * Apply consistent thickness
+ * Specify this polygon as the hoverable/clickable area for the trackable
+ */
+polygon.palette
+{
+    fill: url("#blinds");
+    stroke: currentColor;
+    stroke-width: 4;
+    pointer-events: all;
+}
+
+/* Outer-edge for display palettes */
+polygon.edge
+{
+    stroke: #69ffff;
+    stroke-width: 3;
+    fill: none;
+}
+
+/* Polygon instances use this color until hovered over */
+use.palette
+{
+    color: #107070;
+}
+
+/* Hover over polygons (triggered by CSS or JavaScript applying the 'highlight' class) */
+g.input use:hover,
+g.input g.highlight use
+{
+    color: white;
+    cursor: pointer;
+}
+
+/*
+ * Default SVG text parameters
+ * Don't show I-Beams on hover
+ */
+text
+{
+    fill: white;
+    stroke: black;
+    stroke-width: 0.5;
+    text-anchor: middle;
+    font-size: 11pt;
+    font-family: Arial;
+    font-weight: 900;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hybrid palette: center the value vertically as well */
+g.hybrid text.value
+{
+    dominant-baseline: central;
+}
+
+/* Non-hybrid palettes: Put the value at the bottom of the cell instead */
+g:not(.hybrid) > g text.value
+{
+    transform: translate(0,31px);
+}
+
+/* Display parameters for the key control display */
+text.key
+{
+    fill: lightgray;
+    transform: translate(-14px,31px);
+}
+
+/* Supplemental text for palette images is shown near the top of the cell */
+text.label
+{
+    transform: translate(0,-16px);
+    font-family: Dotum, Calibri;
+
+    stroke-width: 0.5;
+    stroke: lightgray;
+    fill: lightgray;
+    font-size: 17px;
+}
+
+/* Supplemental text for palette images doesn't need to be as prominant in 'input' palettes */
+g.input text.label
+{
+    font-size: 12px;
+}
+
+/* Increment controls */
+text.increment
+{
+    stroke: gray;
+    fill: gray;
+    pointer-events: all;
+    font-size: 12px;
+    font-weight: 500;
+    text-anchor: end;
+    cursor: pointer;
+}
+
+/* Increment controls hover-highlight (triggered by CSS or JavaScript applying the 'highlight' class) */
+text.increment:hover,
+text.increment.highlight
+{
+    fill: white;
+    stroke: white;
+}
+
+/* Text shadow effect */
+.glow
+{
+    fill: black;
+    stroke: black;
+    filter: url(#glow);
+}
+
+/* Make cells that have no value less prominant */
+g.inactive > image,
+g.inactive > text.label
+{
+    filter: url(#inactive);
+}
+
+/* Make text and hexes for cells with no value less prominant (different parameters) */
+g.inactive > text.value,
+g.inactive > use
+{
+    filter: url(#inactiveValue);
+}

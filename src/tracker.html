@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="global.css" />
+    <link rel="stylesheet" href="tracker.css" />
+    <script src="./tracker.js"></script>
+    <title>Phantasy Star Online Tracker - Instance</title>
+</head>
+
+<body>
+    <svg>
+        <defs>
+            <filter id="inactive">
+                <feColorMatrix type="saturate" values="0.1" />
+                <feComponentTransfer>
+                    <feFuncR type="linear" slope="0.1" />
+                    <feFuncG type="linear" slope="0.1" />
+                    <feFuncB type="linear" slope="0.1" />
+                    <feFuncA type="linear" slope="0.7" />
+                </feComponentTransfer>
+            </filter>
+            <filter id="inactiveValue">
+                <feComponentTransfer>
+                    <feFuncR type="linear" slope="0.4" />
+                    <feFuncG type="linear" slope="0.4" />
+                    <feFuncB type="linear" slope="0.4" />
+                </feComponentTransfer>
+            </filter>
+            <filter id="glow">
+                <feGaussianBlur stdDeviation="1" result="glow" />
+                <feGaussianBlur stdDeviation="2" result="glow2" />
+                <feMerge>
+                    <feMergeNode in="glow" />
+                    <feMergeNode in="glow" />
+                    <feMergeNode in="glow2" />
+                    <feMergeNode in="glow2" />
+                </feMerge>
+            </filter>
+            <pattern id="blinds" width="1" height=".090909" patternContentUnits="objectBoundingBox">
+                <rect x="0" y="0" width="1" height="0.034090875" fill="black" fill-opacity="0.5" />
+                <rect x="0" y="0.034090875" width="1" height="0.02272725" fill="#343434" fill-opacity="0.5" />
+                <rect x="0" y="0.056818125" width="1" height="0.034090875" fill="black" fill-opacity="0.5" />
+            </pattern>
+        </defs>
+        <g id="input" />
+        <g id="main" />
+    </svg>
+    <nav>
+        <button id="reset">Reset</button>
+        <button id="saveWindowSize">Save Window Size</button>
+        <button id="revertWindowSize">Revert Window Size</button>
+    </nav>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

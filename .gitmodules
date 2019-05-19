@@ -1,0 +1,3 @@
+[submodule "src/lib/pso-icons"]
+	path = src/lib/pso-icons
+	url = ../pso-icons.git

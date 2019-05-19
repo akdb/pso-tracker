@@ -1,0 +1,52 @@
+/* Default font size */
+body,
+select
+{
+    font-size: 16pt;
+}
+
+/* Copyright / license / source links */
+small
+{
+    font-size: 8pt;
+}
+
+/* Table (form) labels */
+th
+{
+    text-align: right;
+}
+
+/* Extra spacing between labels and dropdowns */
+label
+{
+    margin-right: 1ex;
+}
+
+/* Hyperlinks */
+a
+{
+    color: #20a0a0;
+}
+
+/* Isolate the main form away from the header and footer */
+table
+{
+    margin: 1em;
+}
+
+/* All dropdowns in the table get the same width */
+td > select
+{
+    width: 100%;
+}
+
+/* Big launch button on its own line */
+input[type=submit]
+{
+    display: block;
+    margin-top: 0.5em;
+    width: 100%;
+    font-size: 20pt;
+    font-weight: bolder;
+}

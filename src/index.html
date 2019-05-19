@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="./index.js"></script>
+    <title>Phantasy Star Online Tracker - Launcher</title>
+</head>
+
+<body>
+    <h1>Phantasy Star Online Tracker</h1>
+    <form>
+        <table>
+            <tbody>
+                <tr>
+                    <th>
+                        <label for="view">
+                            View Type
+                        </label>
+                    </th>
+                    <td>
+                        <select id="view" name="view">
+                            <option value="two-palettes">
+                                Separate controls and display (2 palettes)
+                            </option>
+                            <option value="hybrid">
+                                Combine controls and display (1 palette)
+                            </option>
+                            <option value="view-only-mouse">
+                                Display palette only (mouse controls only)
+                            </option>
+                            <option value="view-only-keys">
+                                Display palette only (key controls only)
+                            </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="profile">
+                            Run Profile
+                        </label>
+                    </th>
+                    <td>
+                        <select id="profile" name="profile">
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="layout">
+                            Palette Layout
+                        </label>
+                    </th>
+                    <td>
+                        <select id="layout" name="layout">
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="background">
+                            Background Color
+                        </label>
+                    </th>
+                    <td>
+                        <select id="background" name="background">
+                            <option>Default</option>
+                            <option value="black">Black</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <button id="clear"
+                            title="Clear local storage for this page (use if issues are encountered launching the tracker)">
+                            Clear Save Data
+                        </button>
+                        <input type="submit" value="Launch" />
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+    <footer>
+        <small>
+            Copyright &copy; 2019 Justin Schwartz. All rights reserved.
+            Interested in the project?
+            Check out <a href="https://github.com/akdb/pso-tracker">the repository on GitHub</a>.
+            Just want the source code? Download <a href="../source.zip">the archive for this build</a>.
+            The source code is licensed under the
+            <a href="../license.txt">GNU Affero General Public License, version 3</a>.
+        </small>
+    </footer>
+</body>
+
+</html>

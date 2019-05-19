@@ -1,0 +1,14 @@
+/* Main frame and default font color parameters */
+body
+{
+    margin: 0;
+    padding: 0;
+    background-color: #133b42;
+    color: white;
+}
+
+/* Default font */
+*
+{
+    font-family: Dotum, Calibri, Arial;
+}
