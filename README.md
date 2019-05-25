@@ -5,6 +5,8 @@ The tracker is currently focused on glitchless runs, where the spellcasting clas
 
 ## Using
 
+Tested with Firefox and Chrome.
+
 Options:
 - [Use the tracker online](http://schwjm.me/pso-tracker) (may not be in sync with GitHub commits or releases).
 - Download a [release from GitHub](https://github.com/akdb/pso-tracker/releases) and run `dist/index.html`.

@@ -6,7 +6,7 @@ The `dist` folder contains the application. Load [`dist/index.html`](dist/index.
 
 ## Source code
 
-Available at `dist/__/source.zip`
+Available at [`dist/__/source.zip`](dist/__/source.zip)
 
 ## Building from source code
 
@@ -34,3 +34,7 @@ This program is free software: you can redistribute it and/or modify it under th
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
 
 You should have received a [copy](LICENSE.txt) of the GNU Affero General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+### pso-icons
+
+The [pso-icons](https://github.com/akdb/pso-icons) are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
