@@ -1,3 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
-<rect x="0" y="40" width="100" height="20" rx="5" ry="5" fill="#0bb735" stroke="#000" stroke-miterlimit="10"/>
+<defs>
+    <linearGradient id="fill"
+        x1="0%" y1="0%" x2="0%" y2="100%"
+    >
+        <stop offset="14.28%" stop-color="#00980c" />
+        <stop offset="28.57%" stop-color="#00cc10" />
+        <stop offset="42.86%" stop-color="#00ff14" />
+        <stop offset="57.14%" stop-color="#00ee13" />
+        <stop offset="71.43%" stop-color="#00bc0f" />
+        <stop offset="85.71%" stop-color="#007109" />
+        <stop offset="100%" stop-color="#003204" stop-opacity="0.573" />
+    </linearGradient>
+</defs>
+<rect x="3" y="40" width="94" height="20"
+    rx="7"
+    fill="url(#fill)"
+    stroke="#45777c" stroke-width="3"
+/>
 </svg>
