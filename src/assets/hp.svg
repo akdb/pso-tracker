@@ -1,4 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+<svg xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 100 100"
+    xmlns:cc="http://creativecommons.org/ns#"
+>
+<metadata typeof="cc:Work">
+    This work, from
+    <a property="cc:attributionName" rel="cc:attributionURL"
+        href="https://github.com/akdb/pso-tracker"
+    >
+    pso-tracker</a>, is licensed under a
+    <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+        Creative Commons Attribution-ShareAlike 4.0 International License
+    </a>.
+</metadata>
 <defs>
     <linearGradient id="fill"
         x1="0%" y1="0%" x2="0%" y2="100%"
