@@ -25,7 +25,7 @@
         <stop offset="87.5%" stop-color="#003204" stop-opacity="0.573" />
     </linearGradient>
 </defs>
-<rect x="3" y="40" width="94" height="20"
+<rect x="3" y="44" width="94" height="12"
     rx="7"
     fill="url(#fill)"
     stroke="#45777c" stroke-width="3"
