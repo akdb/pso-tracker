@@ -37,4 +37,4 @@ You should have received a [copy](LICENSE.txt) of the GNU Affero General Public 
 
 ### pso-icons
 
-The [pso-icons](https://github.com/akdb/pso-icons) are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
+SVG assets in this repository and the [pso-icons](https://github.com/akdb/pso-icons) are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).

@@ -1,3 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
-<rect x="0" y="40" width="100" height="20" rx="5" ry="5" fill="#0bb735" stroke="#000" stroke-miterlimit="10"/>
+<svg xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 100 100"
+    xmlns:cc="http://creativecommons.org/ns#"
+>
+<metadata typeof="cc:Work">
+    This work, from
+    <a property="cc:attributionName" rel="cc:attributionURL"
+        href="https://github.com/akdb/pso-tracker"
+    >
+    pso-tracker</a>, is licensed under a
+    <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+        Creative Commons Attribution-ShareAlike 4.0 International License
+    </a>.
+</metadata>
+<defs>
+    <linearGradient id="fill"
+        x1="0%" y1="0%" x2="0%" y2="100%"
+    >
+        <stop offset="12.5%" stop-color="#00980c" />
+        <stop offset="25%" stop-color="#00cc10" />
+        <stop offset="37.5%" stop-color="#00ff14" />
+        <stop offset="50%" stop-color="#00ee13" />
+        <stop offset="62.5%" stop-color="#00bc0f" />
+        <stop offset="75%" stop-color="#007109" />
+        <stop offset="87.5%" stop-color="#003204" stop-opacity="0.573" />
+    </linearGradient>
+    <linearGradient id="stroke"
+        x1="0%" y1="0%" x2="0%" y2="100%"
+    >
+        <stop offset="0%" stop-color="#2da0b2" />
+        <stop offset="100%" stop-color="#41aab1" />
+    </linearGradient>
+</defs>
+<rect x="3" y="44" width="94" height="12"
+    rx="7"
+    fill="url(#fill)"
+    stroke="url(#stroke)" stroke-width="2"
+/>
 </svg>
