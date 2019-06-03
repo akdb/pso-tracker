@@ -26,7 +26,9 @@ window.onload = () => {
         if (saveContainer.Load()) {
             config = saveContainer.data.configuration;
             if (config && config.windowWidth > 0 && config.windowHeight > 0) {
-                windowFeatures += `,width=${config.windowWidth},height=${config.windowHeight}`;
+                let adjustedWidth = config.windowWidth - config.windowWidthMargin || 0;
+                let adjustedHeight = config.windowHeight - config.windowHeightMargin || 0;
+                windowFeatures += `,width=${adjustedWidth},height=${adjustedHeight}`;
             }
         }
         window.open('tracker.html?' + new URLSearchParams(new FormData(form)).toString(), 'pso-tracker', windowFeatures);
