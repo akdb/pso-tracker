@@ -31,7 +31,15 @@ window.onload = () => {
                 windowFeatures += `,width=${adjustedWidth},height=${adjustedHeight}`;
             }
         }
-        window.open('tracker.html?' + new URLSearchParams(new FormData(form)).toString(), 'pso-tracker', windowFeatures);
+        let newWindow = window.open('tracker.html?' + new URLSearchParams(new FormData(form)).toString(), 'pso-tracker', windowFeatures);
+
+        /**
+         * this force resize is to address inconsistencies in Firefox not quite calculating the difference between
+         * inner and outer height correctly
+         */
+        if (config.windowWidth && config.windowHeight)
+            newWindow.resizeTo(config.windowWidth, config.windowHeight);
+
         event.preventDefault();
         return false;
     };
