@@ -125,7 +125,7 @@ export default class Model {
     ResetValues() {
         this._values = {};
         for (const trackKey of Object.keys(this.trackables)) {
-            let initialValue = this.GetAttribute(trackKey, 'min', 0);
+            let initialValue = this.GetAttribute(trackKey, 'initial', this.GetAttribute(trackKey, 'min', 0));
 
             // populate this key as a valid key
             this._values[trackKey] = initialValue;
