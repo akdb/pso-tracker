@@ -113,7 +113,8 @@ g.hybrid text.value
 /* Non-hybrid palettes: Put the value at the bottom of the cell instead */
 g:not(.hybrid) > g text.value
 {
-    transform: translate(0,31px);
+    text-anchor: end;
+    transform: translate(21px,32px);
 }
 
 /* Display parameters for the key control display */
