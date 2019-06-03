@@ -37,7 +37,10 @@ let PaletteProfiles = {
         'name': 'Episode 1 Glitchless Any% FOnewm',
         'trackables': {
             'foie': { 'min': 1 },
-            'barta': { 'target': 1 },
+            'barta': {
+                'target': 1,
+                'initial': 1,
+            },
             'zonde': { 'target': 1 },
             'gifoie': {
                 'target': 1,
@@ -96,7 +99,10 @@ let PaletteProfiles = {
         'name': "Episode 1 Glitchless Any% FOnewearl",
         'trackables': {
             'foie': { 'min': 1 },
-            'barta': { 'target': 1 },
+            'barta': {
+                'target': 1,
+                'initial': 1,
+            },
             'zonde': { 'target': 1 },
             'gifoie': {
                 'target': 1,
