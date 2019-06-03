@@ -166,6 +166,7 @@ text.increment.highlight
 {
     fill: black;
     stroke: black;
+    stroke-width: 5;
     filter: url(#glow);
 }
 
