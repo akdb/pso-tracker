@@ -174,11 +174,8 @@ window.onload = () => {
     saveContainer.data.configuration.background = params.get('background');
     saveContainer.data.configuration.view = params.get('view');
 
-    let keyController = null;
-    if (params.get('view') != 'view-only-mouse') {
-        keyController = new KeyController(model);
-        keyController.Initialize(activeProfile.layouts[saveContainer.data.configuration.layout]);
-    }
+    let keyController = new KeyController(model);
+    keyController.Initialize(activeProfile.layouts[saveContainer.data.configuration.layout]);
 
     let paletteFeatures = [null, null];
     let paletteContainers = [inputRoot, mainRoot];
