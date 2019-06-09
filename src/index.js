@@ -26,10 +26,20 @@ window.onload = () => {
         if (saveContainer.Load()) {
             config = saveContainer.data.configuration;
             if (config && config.windowWidth > 0 && config.windowHeight > 0) {
-                windowFeatures += `,width=${config.windowWidth},height=${config.windowHeight}`;
+                let adjustedWidth = config.windowWidth - config.windowWidthMargin || 0;
+                let adjustedHeight = config.windowHeight - config.windowHeightMargin || 0;
+                windowFeatures += `,width=${adjustedWidth},height=${adjustedHeight}`;
             }
         }
-        window.open('tracker.html?' + new URLSearchParams(new FormData(form)).toString(), 'pso-tracker', windowFeatures);
+        let newWindow = window.open('tracker.html?' + new URLSearchParams(new FormData(form)).toString(), 'pso-tracker', windowFeatures);
+
+        /**
+         * this force resize is to address inconsistencies in Firefox not quite calculating the difference between
+         * inner and outer height correctly
+         */
+        if (config.windowWidth && config.windowHeight)
+            newWindow.resizeTo(config.windowWidth, config.windowHeight);
+
         event.preventDefault();
         return false;
     };

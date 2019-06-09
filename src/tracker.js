@@ -232,6 +232,8 @@ window.onload = () => {
     document.getElementById('saveWindowSize').onclick = () => {
         saveContainer.data.configuration.windowWidth = window.outerWidth;
         saveContainer.data.configuration.windowHeight = window.outerHeight;
+        saveContainer.data.configuration.windowWidthMargin = window.outerWidth - window.innerWidth;
+        saveContainer.data.configuration.windowHeightMargin = window.outerHeight - window.innerHeight;
         saveContainer.Save();
     };
 
