@@ -95,7 +95,6 @@ let Trackables = {
         'image': slots,
         'imageWidth': 40,
         'imageHeight': 40,
-        'imageOffsetY': -5,
         'description': 'Frame Slots',
     },
     'barrier': {
@@ -103,7 +102,6 @@ let Trackables = {
         'image': barrier,
         'imageWidth': 40,
         'imageHeight': 40,
-        'imageOffsetY': -5,
         'description': 'Barrier Obtained?',
     }
 };
