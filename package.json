@@ -1,6 +1,6 @@
 {
   "name": "pso-tracker",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "description": "",
   "browser": "index.html",
@@ -17,12 +17,12 @@
   "license": "AGPL-3.0-only",
   "dependencies": {
     "@svgdotjs/svg.filter.js": "^3.0.6",
-    "@svgdotjs/svg.js": "^3.0.12",
+    "@svgdotjs/svg.js": "^3.0.16",
     "honeycomb-grid": "^1.4.3",
-    "parcel-bundler": "^1.12.3"
+    "parcel-bundler": "^1.12.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
+    "@babel/core": "^7.7.5",
     "bestzip": "^2.1.2",
     "cross-env": "^5.2.0",
     "eslint": "^5.16.0",
