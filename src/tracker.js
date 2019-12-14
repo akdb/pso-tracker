@@ -114,7 +114,7 @@ let hybridFeatures = {
  * Palette options used when view-only-mouse mode is chosen.
  * @type {PaletteOptions}
  */
-let mouseOnlyFeatures = {
+let mouseEnabledFeatures = {
     displayValue: true,
     outerEdge: true,
     cellControls: true,
@@ -185,7 +185,7 @@ window.onload = () => {
             paletteFeatures[0] = hybridFeatures;
             break;
         case 'view-only-mouse':
-            paletteFeatures[0] = mouseOnlyFeatures;
+            paletteFeatures[0] = mouseEnabledFeatures;
             break;
         case 'view-only-keys':
             paletteFeatures[0] = separateViewFeatures;
