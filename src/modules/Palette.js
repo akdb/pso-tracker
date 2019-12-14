@@ -223,7 +223,7 @@ export default class Palette {
      */
     RenderCellControls() {
         for (const [trackKey, cell] of Object.entries(this.cells)) {
-            cell.on('click', () => this.model.IncrementValue(trackKey, this.GetInputLevel(trackKey), 1));
+            cell.on('click', () => this.model.IncrementValue(trackKey, this.GetInputLevel(trackKey), this.GetInputFactor()));
             cell.on('contextmenu', event => {
                 this.model.IncrementValue(trackKey, this.GetInputLevel(trackKey), -1);
                 event.preventDefault();
@@ -462,7 +462,7 @@ export default class Palette {
     }
 
     /**
-     * Get the input factor that will be applied when pressing a control in a cell
+     * Get the input factor that will be applied when pressing a control in a cell (e.g. 1 or -1 to add or subtract values)
      * @return {number} 1 if not associated with a {@link KeyController}, else see {@link KeyController.GetInputFactor}
      */
     GetInputFactor() {
