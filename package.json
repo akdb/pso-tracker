@@ -6,7 +6,7 @@
   "browser": "index.html",
   "scripts": {
     "archive": "bestzip source.zip *.json *.md .eslintrc.js .htmlnanorc .babelrc src",
-    "build": "npm run archive && parcel build --no-cache --no-minify --public-url ./ src/*.html",
+    "build": "npm run archive && parcel build --no-cache --public-url ./ src/*.html",
     "dev": "npm run archive && cross-env ESLINT_OPTION=warn parcel src/*.html",
     "release": "npm run build && bestzip pso-tracker.zip README.dist.md LICENSE.txt dist",
     "lint": "cross-env eslint src",
