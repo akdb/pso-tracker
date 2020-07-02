@@ -43,6 +43,22 @@
                 <rect x="0" y="0.034090875" width="1" height="0.02272725" fill="#343434" fill-opacity="0.5" />
                 <rect x="0" y="0.056818125" width="1" height="0.034090875" fill="black" fill-opacity="0.5" />
             </pattern>
+            <filter id="photon2">
+                <feColorMatrix type="hueRotate" values="95" result="photon2" />
+                <feColorMatrix type="saturate" in="photon2" values="1.7" />
+            </filter>
+            <filter id="photon3">
+                <feColorMatrix type="hueRotate" values="130" result="photon3" />
+                <feColorMatrix type="saturate" id="photon3" values="2" />
+            </filter>
+            <filter id="photon4">
+                <feColorMatrix type="hueRotate" values="218" result="photon4" />
+                <feColorMatrix type="saturate" in="photon4" values="2.1" />
+            </filter>
+            <filter id="photon5">
+                <feColorMatrix type="hueRotate" values="275" result="photon5" />
+                <feColorMatrix type="saturate" in="photon5" values="1.05" />
+            </filter>
         </defs>
         <g id="input" />
         <g id="main" />

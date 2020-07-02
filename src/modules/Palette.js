@@ -195,6 +195,7 @@ export default class Palette {
             if (image = trackable.image) {
                 let offsetY = trackable.imageOffsetY || 0;
                 let imageSizeX, imageSizeY;
+                let imageRotate = 0;
                 if (trackable.imageWidth && trackable.imageHeight) {
                     imageSizeX = trackable.imageWidth;
                     imageSizeY = trackable.imageHeight;
@@ -203,11 +204,16 @@ export default class Palette {
                     imageSizeX = imageSizeY = DEFAULT_IMAGE_SIZE;
                 }
 
-                group.image(image)
+                if (trackable.imageRotate)
+                    imageRotate = trackable.imageRotate;
+
+                this._elementCache[trackKey].image = group.image(image)
                     .size(imageSizeFactor * imageSizeX, imageSizeFactor * imageSizeY)
+                    .rotate(imageRotate)
                     .translate(imageSizeFactor * -imageSizeX / 2, imageSizeFactor * (-imageSizeY / 2 + offsetY))
                     ;
             }
+
             if (label = this.model.trackables[trackKey].label) {
                 let labelObject = group.plain(label);
                 labelObject.addClass('label');
@@ -411,6 +417,20 @@ export default class Palette {
                 else
                     node.classList.remove('highlight');
             }
+        }
+
+        if (this.model.trackables[trackKey].imagePhoton) {
+            let model = this.model;
+            let value = model.values[trackKey];
+
+            for (let c of cache.image.classes().values()) {
+                cache.image.removeClass(c);
+            }
+
+            if (value > 0) {
+                cache.image.addClass(`photon${value}`);
+            }
+
         }
     }
 
