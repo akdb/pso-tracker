@@ -171,6 +171,28 @@ text.increment.highlight
     filter: url(#glow);
 }
 
+/* Photon colors */
+.photon2
+{
+    filter: url(#photon2);
+}
+
+.photon3
+{
+    filter: url(#photon3);
+}
+
+.photon4
+{
+    filter: url(#photon4);
+}
+
+.photon5
+{
+    filter: url(#photon5);
+}
+
+
 /* Make cells that have no value less prominant */
 g.inactive > image,
 g.inactive > text.label
