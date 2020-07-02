@@ -47,10 +47,7 @@ let PaletteProfiles = {
                 'targetUnless': ['rafoie']
             },
             'gibarta': {},
-            'gizonde': {
-                'target': 1,
-                'targetUnless': ['razonde']
-            },
+            'gizonde': { 'target': 1 },
             'rafoie': {},
             'rabarta': {},
             'razonde': {},
@@ -109,10 +106,7 @@ let PaletteProfiles = {
                 'targetUnless': ['rafoie']
             },
             'gibarta': {},
-            'gizonde': {
-                'target': 1,
-                'targetUnless': ['razonde']
-            },
+            'gizonde': { 'target': 1 },
             'rafoie': {},
             'rabarta': {},
             'razonde': {},
