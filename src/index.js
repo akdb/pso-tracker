@@ -75,7 +75,7 @@ window.onload = () => {
     if (config && config.profile)
         profileSelect.value = config.profile;
     onProfileChange();
-    profileSelect.onchange = onProfileChange();
+    profileSelect.onchange = onProfileChange;
 
     if (config && config.layout)
         layoutSelect.value = config.layout;
