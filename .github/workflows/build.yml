@@ -27,4 +27,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
-    - run: npm run build
+    - run: npm run release
+    - uses: actions/upload-artifact@v2
+      with:
+        name: pso-tracker
+        path: pso-tracker.zip
