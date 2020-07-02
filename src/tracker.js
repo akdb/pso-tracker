@@ -166,6 +166,9 @@ window.onload = () => {
         else {
             UseConfiguration(DEFAULT_CONFIGURATION);
         }
+
+        if (saveContainer.data.persistent === void 0)
+            saveContainer.data.persistent = {};
     }
     else {
         saveContainer.data.configuration.layout = params.get('layout');
@@ -227,16 +230,16 @@ window.onload = () => {
     };
 
     document.getElementById('saveWindowSize').onclick = () => {
-        saveContainer.data.configuration.windowWidth = window.outerWidth;
-        saveContainer.data.configuration.windowHeight = window.outerHeight;
-        saveContainer.data.configuration.windowWidthMargin = window.outerWidth - window.innerWidth;
-        saveContainer.data.configuration.windowHeightMargin = window.outerHeight - window.innerHeight;
+        saveContainer.data.persistent.windowWidth = window.outerWidth;
+        saveContainer.data.persistent.windowHeight = window.outerHeight;
+        saveContainer.data.persistent.windowWidthMargin = window.outerWidth - window.innerWidth;
+        saveContainer.data.persistent.windowHeightMargin = window.outerHeight - window.innerHeight;
         saveContainer.Save();
     };
 
     document.getElementById('revertWindowSize').onclick = () => {
-        if (saveContainer.data.configuration.windowWidth && saveContainer.data.configuration.windowHeight) {
-            SetWindowSize(saveContainer.data.configuration.windowWidth, saveContainer.data.configuration.windowHeight);
+        if (saveContainer.data.persistent.windowWidth && saveContainer.data.persistent.windowHeight) {
+            SetWindowSize(saveContainer.data.persistent.windowWidth, saveContainer.data.persistent.windowHeight);
         }
     };
 };

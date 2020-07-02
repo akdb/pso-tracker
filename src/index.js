@@ -23,11 +23,12 @@ window.onload = () => {
     var form = document.getElementsByTagName('form')[0];
     form.onsubmit = event => {
         let windowFeatures = 'titlebar=0,menubar=0,toolbar=0';
+        let persistent = {};
         if (saveContainer.Load()) {
-            config = saveContainer.data.configuration;
-            if (config && config.windowWidth > 0 && config.windowHeight > 0) {
-                let adjustedWidth = config.windowWidth - config.windowWidthMargin || 0;
-                let adjustedHeight = config.windowHeight - config.windowHeightMargin || 0;
+            persistent = saveContainer.data.persistent;
+            if (persistent && persistent.windowWidth > 0 && persistent.windowHeight > 0) {
+                let adjustedWidth = persistent.windowWidth - persistent.windowWidthMargin || 0;
+                let adjustedHeight = persistent.windowHeight - persistent.windowHeightMargin || 0;
                 windowFeatures += `,width=${adjustedWidth},height=${adjustedHeight}`;
             }
         }
@@ -37,8 +38,8 @@ window.onload = () => {
          * this force resize is to address inconsistencies in Firefox not quite calculating the difference between
          * inner and outer height correctly
          */
-        if (config.windowWidth && config.windowHeight)
-            newWindow.resizeTo(config.windowWidth, config.windowHeight);
+        if (persistent.windowWidth && persistent.windowHeight)
+            newWindow.resizeTo(persistent.windowWidth, persistent.windowHeight);
 
         event.preventDefault();
         return false;
