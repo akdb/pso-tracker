@@ -73,7 +73,7 @@ let Trackables = {
     },
     'hp': {
         'max': 650,
-        'increment': [2, 10],
+        'increment': [1, 2, 10],
         'image': hp,
         'imageWidth': 70,
         'imageHeight': 70,

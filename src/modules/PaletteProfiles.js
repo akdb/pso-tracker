@@ -47,10 +47,7 @@ let PaletteProfiles = {
                 'targetUnless': ['rafoie']
             },
             'gibarta': {},
-            'gizonde': {
-                'target': 1,
-                'targetUnless': ['razonde']
-            },
+            'gizonde': { 'target': 1 },
             'rafoie': {},
             'rabarta': {},
             'razonde': {},
@@ -93,6 +90,21 @@ let PaletteProfiles = {
                 'barrier': { x: 2, y: 3, code: 'KeyC' },
                 'mst': { x: 3, y: 2, code: 'KeyV' },
             },
+            {
+                'foie': { x: 0, y: 0, code: 'Digit1' },
+                'gifoie': { x: 1, y: 0, code: 'Digit2' },
+                'rafoie': { x: 2, y: 0, code: 'Digit3' },
+                'mst': { x: 3, y: 0, code: 'Digit4' },
+                'barta': { x: 0, y: 1, code: 'KeyQ' },
+                'gibarta': { x: 1, y: 1, code: 'KeyW' },
+                'rabarta': { x: 2, y: 1, code: 'KeyE' },
+                'barrier': { x: 3, y: 1, code: 'KeyR' },
+                'slots': { x: 4, y: 1, code: 'KeyT' },
+                'zonde': { x: 0, y: 2, code: 'KeyA' },
+                'gizonde': { x: 1, y: 2, code: 'KeyS' },
+                'razonde': { x: 2, y: 2, code: 'KeyD' },
+                'hp': { x: 4, y: 0, code: 'Key5' },
+            },
         ]
     },
     'ep1-glitchless-any%-fonewearl': {
@@ -109,10 +121,7 @@ let PaletteProfiles = {
                 'targetUnless': ['rafoie']
             },
             'gibarta': {},
-            'gizonde': {
-                'target': 1,
-                'targetUnless': ['razonde']
-            },
+            'gizonde': { 'target': 1 },
             'rafoie': {},
             'rabarta': {},
             'razonde': {},
@@ -155,8 +164,91 @@ let PaletteProfiles = {
                 'barrier': { x: 2, y: 3, code: 'KeyC' },
                 'mst': { x: 3, y: 2, code: 'KeyV' },
             },
+            {
+                'foie': { x: 0, y: 0, code: 'Digit1' },
+                'gifoie': { x: 1, y: 0, code: 'Digit2' },
+                'rafoie': { x: 2, y: 0, code: 'Digit3' },
+                'mst': { x: 3, y: 0, code: 'Digit4' },
+                'barta': { x: 0, y: 1, code: 'KeyQ' },
+                'gibarta': { x: 1, y: 1, code: 'KeyW' },
+                'rabarta': { x: 2, y: 1, code: 'KeyE' },
+                'barrier': { x: 3, y: 1, code: 'KeyR' },
+                'slots': { x: 4, y: 1, code: 'KeyT' },
+                'zonde': { x: 0, y: 2, code: 'KeyA' },
+                'gizonde': { x: 1, y: 2, code: 'KeyS' },
+                'razonde': { x: 2, y: 2, code: 'KeyD' },
+                'hp': { x: 4, y: 0, code: 'Key5' },
+            },
         ]
-    }
+    },
+    'ep1-glitchless-allMissions-force': {
+        'name': "Episode 1 Glitchless All Missions Force",
+        'trackables': {
+            'foie': { 'min': 1 },
+            'barta': { 'target': 1 },
+            'zonde': { 'target': 1 },
+            'gifoie': {
+                'target': 1,
+                'targetUnless': ['rafoie']
+            },
+            'gibarta': {},
+            'gizonde': { 'target': 1 },
+            'rafoie': { 'target': 1 },
+            'rabarta': { 'target': 1 },
+            'razonde': { 'target': 1 },
+            'hp': {},
+            'mst': {},
+            'slots': {},
+            'barrier': { 'target': 1 }
+        },
+        'layouts': [
+            {
+                'foie': { x: 0, y: 0, code: 'Digit1' },
+                'gifoie': { x: 1, y: 0, code: 'Digit2' },
+                'rafoie': { x: 2, y: 0, code: 'Digit3' },
+                'mst': { x: 3, y: 0, code: 'Digit4' },
+                'barta': { x: 0, y: 1, code: 'KeyQ' },
+                'gibarta': { x: 1, y: 1, code: 'KeyW' },
+                'rabarta': { x: 2, y: 1, code: 'KeyE' },
+                'barrier': { x: 3, y: 1, code: 'KeyR' },
+                'slots': { x: 3, y: 2, code: 'KeyF' },
+                'zonde': { x: 0, y: 2, code: 'KeyA' },
+                'gizonde': { x: 1, y: 2, code: 'KeyS' },
+                'razonde': { x: 2, y: 2, code: 'KeyD' },
+                'hp': { x: 2, y: 3, code: 'KeyC' },
+            },
+            {
+                'zonde': { x: 0, y: 1, code: 'Digit1' },
+                'barta': { x: 1, y: 0, code: 'Digit2' },
+                'foie': { x: 2, y: 0, code: 'Digit3' },
+                'gizonde': { x: 0, y: 2, code: 'KeyQ' },
+                'gibarta': { x: 1, y: 1, code: 'KeyW' },
+                'gifoie': { x: 2, y: 1, code: 'KeyE' },
+                'razonde': { x: 0, y: 3, code: 'KeyA' },
+                'rabarta': { x: 1, y: 2, code: 'KeyS' },
+                'rafoie': { x: 2, y: 2, code: 'KeyD' },
+                'hp': { x: 0, y: 4, code: 'KeyZ' },
+                'slots': { x: 1, y: 3, code: 'KeyX' },
+                'barrier': { x: 2, y: 3, code: 'KeyC' },
+                'mst': { x: 3, y: 2, code: 'KeyV' },
+            },
+            {
+                'foie': { x: 0, y: 0, code: 'Digit1' },
+                'gifoie': { x: 1, y: 0, code: 'Digit2' },
+                'rafoie': { x: 2, y: 0, code: 'Digit3' },
+                'mst': { x: 3, y: 0, code: 'Digit4' },
+                'barta': { x: 0, y: 1, code: 'KeyQ' },
+                'gibarta': { x: 1, y: 1, code: 'KeyW' },
+                'rabarta': { x: 2, y: 1, code: 'KeyE' },
+                'barrier': { x: 3, y: 1, code: 'KeyR' },
+                'slots': { x: 4, y: 1, code: 'KeyT' },
+                'zonde': { x: 0, y: 2, code: 'KeyA' },
+                'gizonde': { x: 1, y: 2, code: 'KeyS' },
+                'razonde': { x: 2, y: 2, code: 'KeyD' },
+                'hp': { x: 4, y: 0, code: 'Key5' },
+            },
+        ]
+    },
 
 };
 
