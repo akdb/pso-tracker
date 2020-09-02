@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
-    "bestzip": "^2.1.5",
+    "bestzip": "^2.1.7",
     "cross-env": "^5.2.1",
     "eslint": "^5.16.0",
     "eslint-plugin-jsdoc": "^4.8.3",
