@@ -75,9 +75,21 @@ export default class KeyController {
             return this._inputLevelOverride[trackKey];
         }
         var increments = this.model.GetAttribute(trackKey, 'increment', [1]);
-        if (this._inputLevel >= increments.length)
+
+        let inputLevel = this._inputLevel;
+
+        let altAssist = document.getElementById('altAssist');
+        if (altAssist.checked) {
+            inputLevel += 1;
+        }
+        let ctrlAssist = document.getElementById('ctrlAssist');
+        if (ctrlAssist.checked) {
+            inputLevel += 2;
+        }
+
+        if (inputLevel >= increments.length)
             return increments.length - 1;
-        return this._inputLevel;
+        return inputLevel;
     }
 
     /**
@@ -88,6 +100,8 @@ export default class KeyController {
      * @return {undefined}
      */
     OnKeyDown(event) {
+        if (document.getElementById('ctrlAssist').style.display != 'none')
+            return;
         if (this._codeToTrackableMap === null)
             return;
 
@@ -128,6 +142,8 @@ export default class KeyController {
      */
     OnKeyUp(event) {
         if (this._codeToTrackableMap === null)
+            return;
+        if (document.getElementById('ctrlAssist').style.display != 'none')
             return;
 
         let shift = event.code.startsWith('Shift');

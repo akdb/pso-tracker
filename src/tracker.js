@@ -199,7 +199,7 @@ window.onload = () => {
             break;
     }
 
-    let bounds = { x: 0, y: 0 };
+    let bounds = { x: 3, y: 0 };
     for (let paletteID in paletteFeatures) {
         if (paletteFeatures[paletteID] === null)
             break;
