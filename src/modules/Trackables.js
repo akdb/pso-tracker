@@ -1,3 +1,5 @@
+/** @module Trackables */
+
 import PaletteAssets from '../lib/pso-icons/palette/*.svg';
 import grants from '../lib/pso-icons/palette/grants.svg';
 import hp from '../assets/hp.svg';
@@ -26,25 +28,25 @@ import souleater from '../assets/souleater.png';
 
 /**
  * Attributes for an item that can be recorded on the tracker.
- * @typedef {Object} TrackableData
+ * @typedef {object} TrackableData
  * @property {string} [description] - HTML content to display to describe this item
- * @property {numeric} [min] - Minimum value. Default is 0
- * @property {numeric} [max] - Maximum value. Default is no maximum
+ * @property {number} [min] - Minimum value. Default is 0
+ * @property {number} [max] - Maximum value. Default is no maximum
  * @property {boolean} [toggle] - Makes the trackable an "on/off" which may be rendered differently. Overrides {@link TrackableData.max} by implying a max of 1
- * @property {numeric} [target] - Desired value. Default is no target
+ * @property {number} [target] - Desired value. Default is no target
  * @property {Array.<TrackableReference>} [targetUnless] - Negates {@link TrackableData.target} when every trackable specified in the array has a non-zero value and has its target (if any) fulfilled
- * @property {Array.<numeric>} [increment] - List of possible increment levels for the user interface. Default is [1]
+ * @property {Array.<number>} [increment] - List of possible increment levels for the user interface. Default is [1]
  * @property {string} [image] - Path to an image to use on the palette
- * @property {numeric} [imageWidth] - Define a fixed width for the image
- * @property {numeric} [imageHeight] - Define a fixed height for the image
- * @property {numeric} [imageOffsetY] - Define a translation offset along the Y-axis for the image
+ * @property {number} [imageWidth] - Define a fixed width for the image
+ * @property {number} [imageHeight] - Define a fixed height for the image
+ * @property {number} [imageOffsetY] - Define a translation offset along the Y-axis for the image
  * @property {string} [label] - Text to display alongside the image in the palette
  */
 
 
 /**
  * Base definitions of all Trackables supported by this system.
- * @type {Object.<TrackableReference, TrackableData>}
+ * @type {Object<TrackableReference, TrackableData>}
  */
 let Trackables = {
     'foie': {

@@ -1,10 +1,11 @@
-/** @typedef {import('./PaletteProfiles').TrackerLayout} TrackerLayout */
-/** @typedef {import('./Trackables').TrackableReference} TrackableReference */
-/** @typedef {import('./Trackables').TrackableData} TrackableData */
+/** @module Model */
+
+/** @typedef {module:Trackables.TrackableReference} TrackableReference */
+/** @typedef {module:Trackables.TrackableData} TrackableData */
 
 /**
  * Represents an instance of a value being set in a {@link Model}. Can represent a "no change" event.
- * @typedef {Object} ChangeEvent
+ * @typedef {object} ChangeEvent
  * @property {TrackableReference} trackKey - Trackable that is being modified
  * @property {number} previousValue - The value before the event
  * @property {number} value - The new value being set
@@ -58,7 +59,7 @@ export default class Model {
 
     /**
      * Get value data for all items in the tracker.
-     * @return {Object.<TrackableReference, number>} Values container with trackable references as keys
+     * @return {Object<TrackableReference, number>} Values container with trackable references as keys
      */
     get values() {
         return this._valuesProxy;
@@ -66,7 +67,7 @@ export default class Model {
 
     /**
      * Set value data for all items in the tracker.
-     * @param {Object.<TrackableReference, number>} data - Values container with trackable references as keys. All keys must map to trackables in the model.
+     * @param {Object<TrackableReference, number>} data - Values container with trackable references as keys. All keys must map to trackables in the model.
      */
     set values(data) {
         if (Object.keys(data).some(key => !(key in this.trackables)))
@@ -77,7 +78,7 @@ export default class Model {
 
     /**
      * Property data for all items in the tracker.
-     * @return {Object.<TrackableReference, TrackableData>} Attributes container with trackble references as keys
+     * @return {Object<TrackableReference, TrackableData>} Attributes container with trackble references as keys
      */
     get trackables() {
         return this._data;
@@ -85,7 +86,7 @@ export default class Model {
 
     /**
      * Set property data and trackable items for the tracker. Resets all values.
-     * @param {Object.<TrackableReference, TrackableData>} data - Attributes container with trackble references as keys
+     * @param {Object<TrackableReference, TrackableData>} data - Attributes container with trackble references as keys
      */
     set trackables(data) {
         if (typeof data !== 'object')
@@ -98,6 +99,7 @@ export default class Model {
      * Set a value in the tracker.
      * @param {TrackableReference} trackKey - Reference to a trackable
      * @param {number} value - New value
+     * @return {boolean} true on success
      */
     SetValue(trackKey, value) {
         if (!(trackKey in this.values))

@@ -1,7 +1,11 @@
+/** @module PaletteProfiles */
+
 import Trackables from './Trackables';
 
 /* eslint-disable no-magic-numbers*/
 
+/** @typedef {module:Trackables.TrackableReference} TrackableKey */
+/** @typedef {module:Trackables.TrackableData} TrackableData */
 
 /**
  * Reference to a profile in {@link PaletteProfiles}.
@@ -9,28 +13,28 @@ import Trackables from './Trackables';
  */
 
 /**
-* An assortment of trackables to show on a palette with position and keybinding information.
-* @typedef {Object.<TrackableKey, LayoutEntry>} TrackerLayout
-*/
+ * An assortment of trackables to show on a palette with position and keybinding information.
+ * @typedef {Object<TrackableKey, LayoutEntry>} TrackerLayout
+ */
 
 /**
  * Maps a trackable to grid coordinates and a keybinding.
- * @typedef {Object} LayoutEntry
- * @property {numeric} x - X coordinate on the grid layout
- * @property {numeric} y - Y coordinate on the grid layout
+ * @typedef {object} LayoutEntry
+ * @property {number} x - X coordinate on the grid layout
+ * @property {number} y - Y coordinate on the grid layout
  * @property {string} code - See {@link KeyboardEvent.code}
  */
 
 /**
  * Defines a collection of trackables available with extra parameters.
- * @typedef {Object} PaletteProfile
+ * @typedef {object} PaletteProfile
  * @property {string} name - Display name of the profile
- * @property {Object.<TrackableKey, TrackableData>} trackables - Defines available trackables for the profile with extension attributes
- * @property {TrackerLayout} layouts - Preset layouts available for the profile.
+ * @property {Object<TrackableKey, TrackableData>} trackables - Defines available trackables for the profile with extension attributes
+ * @property {TrackableKey} layouts - Preset layouts available for the profile.
  */
 
 /**
- * @type {Object.<string, TrackableData>}
+ * @type {Object<string, TrackableData>}
  */
 let PaletteProfiles = {
     'ep1-glitchless-any%-fonewm': {

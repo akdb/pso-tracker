@@ -1,12 +1,14 @@
+/** @module KeyController */
+
 import Model from './Model';
 
-/** @typedef {import('./PaletteProfiles').TrackerLayout} TrackerLayout */
-/** @typedef {import('./Trackables').TrackableReference} TrackableReference */
+/** @typedef {module:PaletteProfiles.TrackerLayout} TrackerLayout */
+/** @typedef {module:Trackables.TrackableReference} TrackableReference */
 
 /**
  * Represents an instance of user input that interacts with {@link Model}s or interests {@link Palettes}
- * @typedef {Object} InputEvent
  * @property {TrackableReference} trackKey - Trackable that was interacted with due to the input event, or null
+ * @typedef {object} InputEvent
  */
 
 /**

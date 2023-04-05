@@ -1,15 +1,16 @@
+/** @module Palette */
+
 import * as SVG from '@svgdotjs/svg.js';
 import Model from './Model';
 import KeyController from './KeyController';
 import PaletteBakery from './PaletteBakery';
 
-/** @typedef {import('./PaletteProfiles').LayoutEntry} LayoutEntry */
-/** @typedef {import('./PaletteProfiles').TrackerLayout} TrackerLayout */
-/** @typedef {import('./Trackables').TrackableReference} TrackableKey */
-
+/** @typedef {module:PaletteProfiles.LayoutEntry} LayoutEntry */
+/** @typedef {module:PaletteProfiles.TrackerLayout} TrackerLayout */
+/** @typedef {module:Trackables.TrackableReference} TrackableKey */
 /**
  * Extra features and behaviors to set for a Palette. 
- * @typedef {Object} PaletteOptions
+ * @typedef {object} PaletteOptions
  * @param {number} [iconScale] - Amount to scale each cell icon by
  * @param {boolean} [cellControls] - Render the cell as a button
  * @param {boolean} [incrementControls] - Render each increment level as a button

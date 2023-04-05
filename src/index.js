@@ -3,6 +3,10 @@ import SaveData from './modules/SaveData';
 
 var saveContainer = new SaveData(localStorage);
 
+/**
+ * Put text onto the user clipboard.
+ * @param {string} text - String to put onto the clipboard
+ */
 function copyText(text) {
     let element = document.createElement('input');
     let body = document.getElementsByTagName('body')[0];
@@ -12,9 +16,15 @@ function copyText(text) {
     element.setSelectionRange(0, element.value.length);
     document.execCommand("copy");
     body.removeChild(element);
-    alert("Copied to clipboard");
+    alert("Copied to clipboard"); // eslint-disable-line no-alert
 }
 
+/**
+ * Create an absolute URL to a page on this site
+ * @param {string} page - URI relative to the website root (e.g. a .html file)
+ * @param {object} paramsObject - Key/value pairs to build a query string from
+ * @return {string} URL string
+ */
 function buildUrl(page, paramsObject) {
     let result = window.location.href.substring(0, window.location.href.lastIndexOf("/") + 1) + page;
     if (paramsObject === void 0)
