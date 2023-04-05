@@ -229,17 +229,24 @@ window.onload = () => {
         model.ResetValues();
     };
 
-    document.getElementById('saveWindowSize').onclick = () => {
-        saveContainer.data.persistent.windowWidth = window.outerWidth;
-        saveContainer.data.persistent.windowHeight = window.outerHeight;
-        saveContainer.data.persistent.windowWidthMargin = window.outerWidth - window.innerWidth;
-        saveContainer.data.persistent.windowHeightMargin = window.outerHeight - window.innerHeight;
-        saveContainer.Save();
-    };
+    if (params.get('browserSource')) {
+        document.getElementById('saveWindowSize').style.display = 'none';
+        document.getElementById('revertWindowSize').style.display = 'none';
+        document.getElementsByTagName('footer')[0].style.display = 'none';
+    }
+    else {
+        document.getElementById('saveWindowSize').onclick = () => {
+            saveContainer.data.persistent.windowWidth = window.outerWidth;
+            saveContainer.data.persistent.windowHeight = window.outerHeight;
+            saveContainer.data.persistent.windowWidthMargin = window.outerWidth - window.innerWidth;
+            saveContainer.data.persistent.windowHeightMargin = window.outerHeight - window.innerHeight;
+            saveContainer.Save();
+        };
 
-    document.getElementById('revertWindowSize').onclick = () => {
-        if (saveContainer.data.persistent.windowWidth && saveContainer.data.persistent.windowHeight) {
-            SetWindowSize(saveContainer.data.persistent.windowWidth, saveContainer.data.persistent.windowHeight);
-        }
-    };
+        document.getElementById('revertWindowSize').onclick = () => {
+            if (saveContainer.data.persistent.windowWidth && saveContainer.data.persistent.windowHeight) {
+                SetWindowSize(saveContainer.data.persistent.windowWidth, saveContainer.data.persistent.windowHeight);
+            }
+        };
+    }
 };
