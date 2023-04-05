@@ -347,7 +347,7 @@ export default class Palette {
      * @return {string} Current value if non-zero, target information is shown if applicable
      */
     GetCellValueText(trackKey) {
-        let text = this.model.values[trackKey];
+        let text = Math.floor(this.model.values[trackKey] * 10) / 10;
         if (text !== void 0) {
             var target = this.model.GetTarget(trackKey);
             if (target.value && !target.fulfilled) {
@@ -378,13 +378,14 @@ export default class Palette {
     /**
      * Update a trackable's cell to apply CSS classes and current text values
      * @param {TrackableKey} trackKey - Reference to a trackable
-     * @return {undefined}
      */
     RefreshCell(trackKey) {
         if (!(trackKey in this._elementCache))
             return;
 
         let cache = this._elementCache[trackKey];
+        let model = this.model;
+        let value = model.values[trackKey];
 
         if (this.features.displayValue) {
             if (this.model.values[trackKey] == 0) {
@@ -420,8 +421,6 @@ export default class Palette {
         }
 
         if (this.model.trackables[trackKey].imagePhoton) {
-            let model = this.model;
-            let value = model.values[trackKey];
 
             for (let c of cache.image.classes().values()) {
                 cache.image.removeClass(c);

@@ -1,8 +1,20 @@
 import PaletteAssets from '../lib/pso-icons/palette/*.svg';
+import grants from '../lib/pso-icons/palette/grants.svg';
 import hp from '../assets/hp.svg';
 import mst from '../lib/pso-icons/equipment/rod.svg';
 import slots from '../lib/pso-icons/equipment/unit.svg';
 import barrier from '../lib/pso-icons/equipment/barrier.svg';
+
+/* Rorgigor pixel art */
+import saber from '../assets/saber.png';
+import shot from '../assets/shot.png';
+import rifle from '../assets/rifle.png';
+import daggers from '../assets/dagger.png';
+import sword from '../assets/sword.png';
+import partisan from '../assets/partisan.png';
+import handgun from '../assets/handgun.png';
+import mechguns from '../assets/mechgun.png';
+import souleater from '../assets/souleater.png';
 
 /* eslint-disable no-magic-numbers*/
 
@@ -71,6 +83,13 @@ let Trackables = {
         'max': 30,
         'description': 'Razonde',
     },
+    'grants-damage': {
+        'initial': 311,
+        'max': 311,
+        'image': grants,
+        'increment': [1, 15.55],
+        'description': 'Grants Damage Taken',
+    },
     'hp': {
         'max': 650,
         'increment': [1, 2, 10],
@@ -103,6 +122,118 @@ let Trackables = {
         'imageWidth': 40,
         'imageHeight': 40,
         'description': 'Barrier Obtained?',
+    },
+    'handgun': {
+        max: 5,
+        'image': handgun,
+        'imagePhoton': true,
+        'imageRotate': -70,
+        'imageWidth': 35,
+        'imageHeight': 35,
+        'description': 'Handgun'
+    },
+    'mechgun': {
+        max: 5,
+        'image': mechguns,
+        'imagePhoton': true,
+        'imageRotate': -70,
+        'imageWidth': 50,
+        'imageHeight': 50,
+        'description': 'Mechgun'
+    },
+    'saber': {
+        max: 5,
+        'image': saber,
+        'imagePhoton': true,
+        'imageRotate': -15,
+        'imageWidth': 58,
+        'imageHeight': 58,
+        'description': 'Saber',
+    },
+    'saber-glitched': {
+        max: 30,
+        'image': saber,
+        'imageRotate': -15,
+        'imageWidth': 58,
+        'imageHeight': 58,
+        'description': 'Saber',
+    },
+    'souleater': {
+        'toggle': true,
+        'image': souleater,
+        'imageWidth': 60,
+        'imageHeight': 60,
+        'imageRotate': -15,
+        'description': 'Soul Eater',
+    },
+    'sword': {
+        max: 5,
+        'image': sword,
+        'imagePhoton': true,
+        'imageRotate': -15,
+        'imageWidth': 55,
+        'imageHeight': 55,
+        'description': 'Sword'
+    },
+    'partisan': {
+        max: 5,
+        'image': partisan,
+        'imagePhoton': true,
+        'imageRotate': -15,
+        'imageWidth': 55,
+        'imageHeight': 55,
+        'description': 'Partisan'
+    },
+    'dagger': {
+        max: 5,
+        'image': daggers,
+        'imagePhoton': true,
+        'imageRotate': -15,
+        'imageWidth': 50,
+        'imageHeight': 50,
+        'description': 'Dagger'
+    },
+    'shot': {
+        max: 5,
+        'image': shot,
+        'imagePhoton': true,
+        'imageRotate': -15,
+        'imageWidth': 55,
+        'imageHeight': 55,
+        'description': 'Shot'
+    },
+    'rifle': {
+        max: 5,
+        'image': rifle,
+        'imagePhoton': true,
+        'imageRotate': -15,
+        'imageWidth': 55,
+        'imageHeight': 55,
+        'description': 'Rifle'
+    },
+    'atp': {
+        'max': 1100,
+        'increment': [1, 2, 5],
+        'label': 'ATP+',
+        'description': 'ATP Boost',
+    },
+    'ata': {
+        'max': 200,
+        'increment': [0.5, 1],
+        'label': 'ATA+',
+        'description': 'ATA Boost',
+    },
+    'resta': {
+        'max': 30,
+        'description': 'Resta',
+        'label': 'Resta',
+        'image': hp,
+        'imageWidth': 70,
+        'imageHeight': 70,
+    },
+    'scape': {
+        'description': 'Scape Doll',
+        'label': 'Scape Doll',
     }
 };
 
