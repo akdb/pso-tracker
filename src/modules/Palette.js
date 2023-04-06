@@ -1,15 +1,16 @@
+/** @module Palette */
+
 import * as SVG from '@svgdotjs/svg.js';
 import Model from './Model';
 import KeyController from './KeyController';
 import PaletteBakery from './PaletteBakery';
 
-/** @typedef {import('./PaletteProfiles').LayoutEntry} LayoutEntry */
-/** @typedef {import('./PaletteProfiles').TrackerLayout} TrackerLayout */
-/** @typedef {import('./Trackables').TrackableReference} TrackableKey */
-
+/** @typedef {module:PaletteProfiles.LayoutEntry} LayoutEntry */
+/** @typedef {module:PaletteProfiles.TrackerLayout} TrackerLayout */
+/** @typedef {module:Trackables.TrackableReference} TrackableKey */
 /**
  * Extra features and behaviors to set for a Palette. 
- * @typedef {Object} PaletteOptions
+ * @typedef {object} PaletteOptions
  * @param {number} [iconScale] - Amount to scale each cell icon by
  * @param {boolean} [cellControls] - Render the cell as a button
  * @param {boolean} [incrementControls] - Render each increment level as a button
@@ -195,6 +196,7 @@ export default class Palette {
             if (image = trackable.image) {
                 let offsetY = trackable.imageOffsetY || 0;
                 let imageSizeX, imageSizeY;
+                let imageRotate = 0;
                 if (trackable.imageWidth && trackable.imageHeight) {
                     imageSizeX = trackable.imageWidth;
                     imageSizeY = trackable.imageHeight;
@@ -203,11 +205,16 @@ export default class Palette {
                     imageSizeX = imageSizeY = DEFAULT_IMAGE_SIZE;
                 }
 
-                group.image(image)
+                if (trackable.imageRotate)
+                    imageRotate = trackable.imageRotate;
+
+                this._elementCache[trackKey].image = group.image(image)
                     .size(imageSizeFactor * imageSizeX, imageSizeFactor * imageSizeY)
+                    .rotate(imageRotate)
                     .translate(imageSizeFactor * -imageSizeX / 2, imageSizeFactor * (-imageSizeY / 2 + offsetY))
                     ;
             }
+
             if (label = this.model.trackables[trackKey].label) {
                 let labelObject = group.plain(label);
                 labelObject.addClass('label');
@@ -341,7 +348,7 @@ export default class Palette {
      * @return {string} Current value if non-zero, target information is shown if applicable
      */
     GetCellValueText(trackKey) {
-        let text = this.model.values[trackKey];
+        let text = Math.floor(this.model.values[trackKey] * 10) / 10;
         if (text !== void 0) {
             var target = this.model.GetTarget(trackKey);
             if (target.value && !target.fulfilled) {
@@ -372,13 +379,14 @@ export default class Palette {
     /**
      * Update a trackable's cell to apply CSS classes and current text values
      * @param {TrackableKey} trackKey - Reference to a trackable
-     * @return {undefined}
      */
     RefreshCell(trackKey) {
         if (!(trackKey in this._elementCache))
             return;
 
         let cache = this._elementCache[trackKey];
+        let model = this.model;
+        let value = model.values[trackKey];
 
         if (this.features.displayValue) {
             if (this.model.values[trackKey] == 0) {
@@ -411,6 +419,18 @@ export default class Palette {
                 else
                     node.classList.remove('highlight');
             }
+        }
+
+        if (this.model.trackables[trackKey].imagePhoton) {
+
+            for (let c of cache.image.classes().values()) {
+                cache.image.removeClass(c);
+            }
+
+            if (value > 0) {
+                cache.image.addClass(`photon${value}`);
+            }
+
         }
     }
 

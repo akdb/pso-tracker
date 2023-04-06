@@ -43,6 +43,22 @@
                 <rect x="0" y="0.034090875" width="1" height="0.02272725" fill="#343434" fill-opacity="0.5" />
                 <rect x="0" y="0.056818125" width="1" height="0.034090875" fill="black" fill-opacity="0.5" />
             </pattern>
+            <filter id="photon2">
+                <feColorMatrix type="hueRotate" values="100" result="photon2" />
+                <feColorMatrix type="saturate" in="photon2" values="4" />
+            </filter>
+            <filter id="photon3">
+                <feColorMatrix type="hueRotate" values="130" result="photon3" />
+                <feColorMatrix type="saturate" id="photon3" values="2" />
+            </filter>
+            <filter id="photon4">
+                <feColorMatrix type="hueRotate" values="230" result="photon4" />
+                <feColorMatrix type="saturate" in="photon4" values="4.1" />
+            </filter>
+            <filter id="photon5">
+                <feColorMatrix type="hueRotate" values="275" result="photon5" />
+                <feColorMatrix type="saturate" in="photon5" values="2.05" />
+            </filter>
         </defs>
         <g id="input" />
         <g id="main" />
@@ -51,6 +67,18 @@
         <button id="reset">Reset</button>
         <button id="saveWindowSize">Save Window Size</button>
         <button id="revertWindowSize">Revert Window Size</button>
+        <!-- Rectangular switch -->
+        <label class="switch">
+            <input type="checkbox" id="altAssist" />
+            <span class="slider"></span>
+            <div class="sliderText">Alt</div>
+        </label>
+
+        <label class="switch">
+            <input type="checkbox" id="ctrlAssist" />
+            <span class="slider"></span>
+            <div class="sliderText">Ctrl</div>
+        </label>
     </nav>
     <footer>
 

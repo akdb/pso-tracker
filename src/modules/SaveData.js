@@ -1,8 +1,10 @@
+/** @module SaveData */
+
 /**
  * Data persisted for the tracker between pageloads.
- * @typedef {Object} SaveData
- * @property {TrackerConfiguration} configuration - Parameters for the tracker (profile, user interface, etc.)
- * @property {Object.<TrackableReference, number>} values - Trackable values for the {@link Model}
+ * @typedef {object} SaveData
+ * @property {module:tracker.TrackerConfiguration} configuration - Parameters for the tracker (profile, user interface, etc.)
+ * @property {Object<module:Trackables.TrackableReference, number>} values - Trackable values for the {@link Model}
  */
 
 /**

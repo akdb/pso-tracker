@@ -27,7 +27,7 @@ Using [parcel](https://parceljs.org/), you can run a local web server and contin
 
 ## License
 
-Copyright (C) 2019 Justin Schwartz
+Copyright (C) 2019-2023 Justin Schwartz
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
@@ -38,3 +38,7 @@ You should have received a [copy](LICENSE.txt) of the GNU Affero General Public 
 ### pso-icons
 
 SVG assets in this repository and the [pso-icons](https://github.com/akdb/pso-icons) are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
+
+### Rorgigor pixel art
+
+Courtesy of [Rorgigor](https://twitch.tv/rorgigor) to be included with this repository.

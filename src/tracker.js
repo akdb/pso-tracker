@@ -1,15 +1,17 @@
+/** @module tracker */
+
 import Model from './modules/Model';
 import Palette from './modules/Palette';
 import PaletteProfiles from './modules/PaletteProfiles';
 import KeyController from './modules/KeyController';
 import SaveData from './modules/SaveData';
 
-/** @typedef {import('./modules/Palette').PaletteOptions} PaletteOptions */
-/** @typedef {import('./modules/PaletteProfiles').ProfileKey} ProfileKey */
+/** @typedef {module:Palette.PaletteOptions} PaletteOptions */
+/** @typedef {module:PaletteProfiles.ProfileKey} ProfileKey */
 
 /**
  * Parameters for the tracker interface and model.
- * @typedef {Object} TrackerConfiguration
+ * @typedef {object} TrackerConfiguration
  * @property {string} profile - Key of the profile to use
  * @property {string} view - View type identifier
  * @property {number} [windowWidth] - X Size to use for the tracker window
@@ -43,7 +45,7 @@ const DEFAULT_CONFIGURATION = {
 };
 
 /**
- * @type {PaletteProfile}
+ * @type {module:PaletteProfiles.PaletteProfile}
  */
 var activeProfile;
 
@@ -199,7 +201,7 @@ window.onload = () => {
             break;
     }
 
-    let bounds = { x: 0, y: 0 };
+    let bounds = { x: 3, y: 0 };
     for (let paletteID in paletteFeatures) {
         if (paletteFeatures[paletteID] === null)
             break;
@@ -229,17 +231,24 @@ window.onload = () => {
         model.ResetValues();
     };
 
-    document.getElementById('saveWindowSize').onclick = () => {
-        saveContainer.data.persistent.windowWidth = window.outerWidth;
-        saveContainer.data.persistent.windowHeight = window.outerHeight;
-        saveContainer.data.persistent.windowWidthMargin = window.outerWidth - window.innerWidth;
-        saveContainer.data.persistent.windowHeightMargin = window.outerHeight - window.innerHeight;
-        saveContainer.Save();
-    };
+    if (params.get('browserSource')) {
+        document.getElementById('saveWindowSize').style.display = 'none';
+        document.getElementById('revertWindowSize').style.display = 'none';
+        document.getElementsByTagName('footer')[0].style.display = 'none';
+    }
+    else {
+        document.getElementById('saveWindowSize').onclick = () => {
+            saveContainer.data.persistent.windowWidth = window.outerWidth;
+            saveContainer.data.persistent.windowHeight = window.outerHeight;
+            saveContainer.data.persistent.windowWidthMargin = window.outerWidth - window.innerWidth;
+            saveContainer.data.persistent.windowHeightMargin = window.outerHeight - window.innerHeight;
+            saveContainer.Save();
+        };
 
-    document.getElementById('revertWindowSize').onclick = () => {
-        if (saveContainer.data.persistent.windowWidth && saveContainer.data.persistent.windowHeight) {
-            SetWindowSize(saveContainer.data.persistent.windowWidth, saveContainer.data.persistent.windowHeight);
-        }
-    };
+        document.getElementById('revertWindowSize').onclick = () => {
+            if (saveContainer.data.persistent.windowWidth && saveContainer.data.persistent.windowHeight) {
+                SetWindowSize(saveContainer.data.persistent.windowWidth, saveContainer.data.persistent.windowHeight);
+            }
+        };
+    }
 };

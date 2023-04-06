@@ -1,10 +1,12 @@
+/** @module PaletteBakery */
+
 import { extendHex as Hex, defineGrid as Grid } from 'honeycomb-grid';
 
 /**
  * Dynamically calculate hexagon parameters for the hexagon-grid library,
  * mostly to automatically set the origin as the center of the hexagon.
  * @param {number} size - horizontal radius of the hexagon
- * @return {Object} - data to pass to {@link Hex}
+ * @return {object} - data to pass to {@link Hex}
  */
 function hexParameters(size) {
     return {
@@ -16,11 +18,11 @@ function hexParameters(size) {
 
 /**
  * Additional information on an edge of a hexagon cell in a grid
- * @typedef {Object} HexEdgeData
+ * @typedef {object} HexEdgeData
  * @property {boolean} hasAdjacentHex - Whether there is a different cell attached to this edge in the grid
  * @property {Array.<string>} connectedEdges - Names of the edges adjacent to this edge
- * @property {Array.<Object>} points - X,Y Objects describing the points of this edge
- * @property {numeric} angle - Angle of the edge in radians
+ * @property {Array.<object>} points - X,Y Objects describing the points of this edge
+ * @property {number} angle - Angle of the edge in radians
  */
 
 const EDGE_HEX_SIZE = 50;
@@ -86,6 +88,7 @@ let PaletteBakery = {
      * @param {Grid} grid - Hexagon grid
      * @param {Hex} hex - Hexagon cell in the grid to examine
      * @param {Hex} substituteHex - Alternate hexagon definition to use coordinates for while using the main hex for neighbor data
+     * @return {Object<string,object>} Keyed edge data (keys are cardinal directions from {@link EDGE_NAMES})
      */
     getHexEdgeData: function (grid, hex, substituteHex = null) {
         if (substituteHex === null)
