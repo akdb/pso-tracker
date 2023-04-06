@@ -102,9 +102,9 @@ export default class KeyController {
      * @return {undefined}
      */
     OnKeyDown(event) {
-        if (document.getElementById('ctrlAssist').style.display != 'none')
-            return;
         if (this._codeToTrackableMap === null)
+            return;
+        if (document.getElementById('saveWindowSize').style.display == 'none') //browser source mode, disable actual key use due to apparent OBS bugs
             return;
 
         this._inputLevel = 0;
@@ -145,7 +145,7 @@ export default class KeyController {
     OnKeyUp(event) {
         if (this._codeToTrackableMap === null)
             return;
-        if (document.getElementById('ctrlAssist').style.display != 'none')
+        if (document.getElementById('saveWindowSize').style.display == 'none') //browser source mode, disable actual key use due to apparent OBS bugs
             return;
 
         let shift = event.code.startsWith('Shift');
